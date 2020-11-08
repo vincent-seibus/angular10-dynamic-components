@@ -14,7 +14,12 @@ export class DataService {
 
   //  Public Methods
   getHtml(): Observable<any> {
-    return of(`<div> <p> {{user?.firstname}}  {{user?.lastname}} </p> <button class='button-color' (click)='clickMe()'>Click Me! </button> </div>   <div *ngIf='showText'> <p> You clicked the button!</p></div> `);
+    return of(`<div> The code inside brackets is displayed properly <br/>
+    <p> {{user?.firstname}}  {{user?.lastname}} </p>
+    <br/>
+    but the button doesn't show the text when in prod mode with Ivy compilation (it works otherwise ) :
+    <br/>
+    <button class='button-color' (click)='clickMe()'>Click Me! </button> </div>   <div *ngIf='showText'> <p> You clicked the button!</p></div> `);
   }
 
   getUser(): Observable<any> {
